@@ -4,7 +4,7 @@
 - MUI : Bibliothèque de composants React (basé sur Material Design)
 - sass : Ajout du support du « sass / scss »
 ### Routage
-- ...
+- React-router : Bibliotheque de gestion de route pour React
 ### Formulaire
 - ...
 ### Divers
