@@ -1,0 +1,10 @@
+.nav {
+    min-width: 200px;
+    padding: 10px;
+}
+
+.nav .logo {
+    width: 90px;
+    height: 90px;
+    align-self: center;
+}

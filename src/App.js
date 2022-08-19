@@ -1,3 +1,4 @@
+import { Drawer } from '@mui/material';
 import { useState } from 'react';
 import './App.css';
 import Header from './containers/header/header';
@@ -12,9 +13,14 @@ function App() {
     <>
       <Header
         onOpenMenu={() => setMenuVisible(true)} />
-      <NavBar
-        isVisible={menuVisible}
-        onCloseMenu={() => setMenuVisible(false)} />
+      <Drawer
+        anchor='left'
+        open={menuVisible}
+        onClose={() => setMenuVisible(false)}>
+
+        <NavBar />
+
+      </Drawer>
       <main className="App">
 
       </main>
