@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { addFruit, expireFruit, removeFruit } from '../actions/fruit-action';
+import { addFruit, clearFruit, expireFruit, removeFruit } from '../actions/fruit-action';
 
 const initialState = {
     fruits: [],
@@ -27,6 +27,10 @@ const fruitReducer = createReducer(initialState, (builder) => {
 
             const targetIndex = state.fruits.findIndex(f => f.id === fruitId);
             state.fruits[targetIndex].expire = true;
+        })
+        .addCase(clearFruit, (state) => {
+            state.fruits = [];
+            state.msg = 'Clear :o';
         });
 });
 

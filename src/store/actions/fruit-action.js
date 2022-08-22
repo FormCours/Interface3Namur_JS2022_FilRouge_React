@@ -37,3 +37,5 @@ export const addFruit = createAction('fruit/add', (fruit) => ({
 export const removeFruit = createAction('fruit/remove');
 
 export const expireFruit = createAction('fruit/expire');
+
+export const clearFruit = createAction('fruit/clear');
