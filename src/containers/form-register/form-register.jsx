@@ -1,12 +1,17 @@
 import { Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../store/actions/auth-action';
 
 const FormRegister = () => {
 
     const { register, handleSubmit, reset } = useForm();
+    const dispatch = useDispatch();
 
     const onRegister = (data) => {
         console.log(data);
+
+        dispatch(registerUser(data));
 
         reset();
     };
