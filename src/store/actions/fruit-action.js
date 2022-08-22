@@ -1,5 +1,5 @@
 // Liste d'actions pour la categorie "Fruit"
-//  - Ajouter un fruit → { family: 'Pomme' weight: '100gr' }
+//  - Ajouter un fruit → { family: 'Pomme', weight: '100gr' }
 //  - Supprimer un fruit
 //  - Indiquer qu'un fruit est périmé
 
