@@ -1,6 +1,22 @@
-import { Avatar, Divider, Stack } from '@mui/material';
+import { Avatar, Divider, Stack, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import IconMenu from './icon_menu.jpg';
 import style from './nav-bar.module.css';
+import { NavLink } from 'react-router-dom';
+import { navRoute } from './nav-route';
+
+
+const NavBarMenuItem = ({ to, text, icon }) => {
+    return (
+        <ListItemButton component={NavLink} to={to}>
+            <ListItemIcon>
+                {icon}
+            </ListItemIcon>
+            <ListItemText>
+                {text}
+            </ListItemText>
+        </ListItemButton>
+    );
+};
 
 const NavBar = () => {
 
@@ -16,8 +32,14 @@ const NavBar = () => {
                     alt='Logo menu'
                     src={IconMenu} />
 
-                <p>Menu ici</p>
+                <List>
+                    {navRoute.map((element, index) => (
+                        <NavBarMenuItem {...element} key={index} />
+                    ))}
+                </List>
 
+                {/* ↓ Exemple de lien de navigation avec React-Router */}
+                <NavLink to='marc'>Error</NavLink>
             </Stack>
         </nav>
     );
