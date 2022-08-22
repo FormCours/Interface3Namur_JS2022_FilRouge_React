@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+import FormRegister from '../../containers/form-register/form-register';
 
 const Register = () => {
 
@@ -8,7 +9,7 @@ const Register = () => {
                 Register
             </Typography>
 
-            TODO → Ajouter le formulaire de register :o
+            <FormRegister />
         </>
     );
 };
