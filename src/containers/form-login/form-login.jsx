@@ -1,12 +1,13 @@
 import { Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../store/actions/auth-action';
 
 const FormLogin = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const dispatch = useDispatch();
+    const errorMsg = useSelector(state => state.auth.errorMsg);
 
     const onRegister = (data) => {
         dispatch(loginUser(data));
@@ -27,6 +28,10 @@ const FormLogin = () => {
             <Button type='submit' variant='contained' color='primary'>
                 Se connecter
             </Button>
+
+            {errorMsg && (
+                <p>{errorMsg}</p>
+            )}
         </form>
     );
 };

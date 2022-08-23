@@ -1,18 +1,18 @@
 import { Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../store/actions/auth-action';
 
 const FormRegister = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const dispatch = useDispatch();
+    const errorMsg = useSelector(state => state.auth.errorMsg);
 
     const onRegister = (data) => {
         console.log(data);
 
         dispatch(registerUser(data));
-
         reset();
     };
 
@@ -42,6 +42,10 @@ const FormRegister = () => {
             <Button type='submit' variant='contained' color='primary'>
                 Créer un compte 🐓
             </Button>
+
+            {errorMsg && (
+                <p>{errorMsg}</p>
+            )}
         </form>
     );
 };
