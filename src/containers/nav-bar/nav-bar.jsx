@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom';
 import { navRoute } from './nav-route';
 
 
-const NavBarMenuItem = ({ to, text, icon }) => {
+const NavBarMenuItem = ({ to, text, icon, onSelected }) => {
     return (
-        <ListItemButton component={NavLink} to={to}>
+        <ListItemButton component={NavLink} to={to} onClick={onSelected}>
             <ListItemIcon>
                 {icon}
             </ListItemIcon>
@@ -18,7 +18,7 @@ const NavBarMenuItem = ({ to, text, icon }) => {
     );
 };
 
-const NavBar = () => {
+const NavBar = ({ onSelectedMenu }) => {
 
     return (
         <nav className={style.nav}>
@@ -34,7 +34,7 @@ const NavBar = () => {
 
                 <List>
                     {navRoute.map((element, index) => (
-                        <NavBarMenuItem {...element} key={index} />
+                        <NavBarMenuItem {...element} onSelected={onSelectedMenu} key={index} />
                     ))}
                 </List>
 

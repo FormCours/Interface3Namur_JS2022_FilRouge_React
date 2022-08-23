@@ -22,7 +22,7 @@ function App() {
         open={menuVisible}
         onClose={() => setMenuVisible(false)}>
 
-        <NavBar />
+        <NavBar onSelectedMenu={() => setMenuVisible(false)} />
 
       </Drawer>
       <main className="App">
