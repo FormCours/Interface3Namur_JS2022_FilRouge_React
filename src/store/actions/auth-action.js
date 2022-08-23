@@ -10,4 +10,12 @@ export const registerUser = createAsyncThunk('user/register',
     }
 );
 
+export const loginUser = createAsyncThunk('user/login',
+    async (data, thunkAPI) => {
+        const response = await axios.post('http://localhost:8080/api/auth/login', data);
+        return response.data.token;
+    }
+);
+
+
 export const logoutUser = createAction('user/logout');

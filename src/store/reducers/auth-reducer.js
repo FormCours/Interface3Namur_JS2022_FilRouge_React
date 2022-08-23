@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { logoutUser, registerUser } from '../actions/auth-action';
+import { loginUser, logoutUser, registerUser } from '../actions/auth-action';
 
 const initialState = {
     token: null,
@@ -9,6 +9,10 @@ const initialState = {
 const authReducer = createReducer(initialState, (builder) => {
     builder
         .addCase(registerUser.fulfilled, (state, action) => {
+            state.isConnected = true;
+            state.token = action.payload;
+        })
+        .addCase(loginUser.fulfilled, (state, action) => {
             state.isConnected = true;
             state.token = action.payload;
         })

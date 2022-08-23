@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+import FormLogin from '../../containers/form-login/form-login';
 
 const Login = () => {
 
@@ -8,7 +9,7 @@ const Login = () => {
                 Login
             </Typography>
 
-            TODO → Ajouter le formulaire de login :o
+            <FormLogin />
         </>
     );
 };
