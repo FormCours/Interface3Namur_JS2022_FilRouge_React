@@ -1,8 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import TitlePage from '../../components/title-page/title-page';
+import { useRedirectToHomeIfConnected } from '../../hooks/redirect-hook';
 
 
 const Auth = () => {
+
+    useRedirectToHomeIfConnected();
 
     return (
         <>
